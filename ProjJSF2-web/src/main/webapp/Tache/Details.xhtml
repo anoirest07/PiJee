@@ -1,0 +1,44 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	template="/Template/Template.xhtml">
+	<ui:define name="content">
+
+<h:form>
+		<h:panelGrid columns="2">
+
+				<h:outputText value="IdTache" style="font-weight:bold" />
+				<h:outputText value="#{tache.t.idTache}" style="font-weight:bold" />
+				<h:outputText value="DeadlineTache " style="font-weight:bold" />
+				<h:outputText value="#{tache.t._DeadlineTache}" style="font-weight:bold" />
+				<h:outputText value="descTache " style="font-weight:bold" />
+				<h:outputText value="#{tache.t.descTache}" style="font-weight:bold" />
+
+				<h:outputText value="etatdeTache " style="font-weight:bold" />
+				<h:outputText value="#{tache.t.etatdeTache.name()}" style="font-weight:bold" />
+				<h:outputText value="Nom " style="font-weight:bold" />
+				<h:outputText value="#{tache.t.nom.name()}" style="font-weight:bold" />
+				<h:outputText value="Organisateur " style="font-weight:bold" />
+				<h:outputText value="#{tache.t.oragnisateurFk}" style="font-weight:bold" />
+			
+
+
+
+			</h:panelGrid>	
+
+		</h:form>
+
+
+
+
+
+	</ui:define>
+
+</ui:composition>
+
+
+
+

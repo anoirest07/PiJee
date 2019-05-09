@@ -1,0 +1,110 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+template="/Template/Template.xhtml">
+<ui:define name="content">
+
+	
+	<br></br>
+	<br></br>
+	
+	
+	<nav class="navbar navbar-expand-sm bg-light navbar-light">
+  <ul class="navbar-nav">
+    <li class="nav-item ">
+      <a class="nav-link" href="${facesContext.externalContext.requestContextPath}/Tache/UndoneTasks.jsf">Undone Tasks</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="${facesContext.externalContext.requestContextPath}/Tache/InprogressTasks.jsf">In progress Tasks</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="${facesContext.externalContext.requestContextPath}/Tache/DoneTasks.jsf">Done Tasks</a>
+    </li>
+    <li class="nav-item active">
+    
+    
+      <a class="nav-link" href="${facesContext.externalContext.requestContextPath}/Tache/ListTaches.jsf">Task List</a>
+    </li>
+  </ul>
+</nav>
+	
+	
+	
+   <br></br>
+
+	  
+	   <h3> The in progress Tasks</h3>
+			<h:form>
+	
+			<h:dataTable value="#{tache.inprogresstasks}" var="form" class="table table-hover">
+
+
+				<h:column>
+
+					<f:facet name="header">
+						<h:outputText value="IdTache " />
+					</f:facet>
+					<h:outputText value="#{form.idTache}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Nom" />
+					</f:facet>
+					<h:outputText value="#{form.nom.name()}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="DescTache" />
+					</f:facet>
+					<h:outputText value="#{form.descTache}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="DeadlineTache" />
+					</f:facet>
+					<h:outputText value="#{form.deadlineTache}" />
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="EtatdeTache" />
+					</f:facet>
+					
+					<h:outputText value="#{form.etatdeTache.name()}" />
+						
+				</h:column>
+			
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="OragnisateurFk" />
+					</f:facet>
+					<h:outputText value="#{form.oragnisateurFk}" />
+				</h:column>
+
+							<h:column>
+
+					<f:facet name="header">
+						<h:outputText value="Details " />
+					</f:facet>
+				<a href="Details.jsf">Details</a>
+				</h:column>
+
+
+
+ 	
+
+
+			</h:dataTable>
+		</h:form>
+	
+	  
+</ui:define>
+	
+</ui:composition>
+
+
+
+

@@ -1,0 +1,79 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	template="/Template/Template.xhtml">
+	<ui:define name="content">
+
+	
+			<h:form>
+	 <h3> My Tasks</h3>
+			<h:dataTable value="#{tache.lsttaches}" var="form" class="table table-hover">
+
+
+				<h:column>
+
+					<f:facet name="header">
+						<h:outputText value="IdTache " />
+					</f:facet>
+					<h:outputText value="#{form.idTache}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Nom" />
+					</f:facet>
+					<h:outputText value="#{form.nom.name()}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="DescTache" />
+					</f:facet>
+					<h:outputText value="#{form.descTache}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="DeadlineTache" />
+					</f:facet>
+					<h:outputText value="#{form.deadlineTache}" />
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="EtatdeTache" />
+					</f:facet>
+					
+					<h:outputText value="#{form.etatdeTache.name()}" />
+						
+				</h:column>
+			
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="OragnisateurFk" />
+					</f:facet>
+					<h:outputText value="#{form.oragnisateurFk}" />
+				</h:column>
+							<h:column>
+
+					<f:facet name="header">
+						<h:outputText value="Details " />
+					</f:facet>
+				<a href="Details.jsf">Details</a>
+				</h:column>
+
+
+			</h:dataTable>
+		</h:form>
+	  
+	  
+	  
+
+
+	</ui:define>
+
+</ui:composition>
+
+
+
+
