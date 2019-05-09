@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:c="http://java.sun.com/jsp/jstl/core"
+xmlns:p="http://primefaces.org/ui"
+template ="/Template/Template.xhtml">
+ <ui:define name="content">
+
+
+<h:form>
+<p:messages id="msgs" />
+<table>
+
+<tr>
+<td>
+<h:outputText value="Quantites" />
+</td>
+<td>
+ <h:inputText value="#{ticket.quantites}" />
+ </td>
+</tr>
+<tr>
+<td>
+<h:commandButton value="buy" action="#{ticket.add()}" />
+<br>
+</br>
+<h:commandButton action="#{ticket.createPDF(getByEvent1.get('IdEvent'))}"  onclick="this.form.target='_blank'" class="genric-btn default-border circle arrow" value="View Ticket"/>
+</td>
+</tr>
+
+<p:barcode value="mohamedanoir.bday@esprit.tn" type="qr" /> 
+</table>
+</h:form>
+
+
+
+ </ui:define>
+</ui:composition>
