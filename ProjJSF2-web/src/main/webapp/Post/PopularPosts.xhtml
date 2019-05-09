@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:c="http://java.sun.com/jsp/jstl/core"
+template ="/Template/Template.xhtml">
+ <ui:define name="content">
+<br></br>
+<br></br>
+<c:forEach items="#{post.getTopPost()}" var="rec">
+<div class="col-md-7 ml-auto mr-auto" align="center">
+<div class="row">
+
+      <!-- Grid column -->
+      <div class="col-lg-7">
+
+        <!-- Category -->
+        <a href="#!" class="pink-text">
+          <h6 class="font-weight-bold mb-3"><i class="fas fa-image pr-2"></i>Lifestyle</h6>
+        </a>
+        <!-- Post title -->
+        <h3 class="font-weight-bold mb-3"><strong><h:outputText value="${rec.get('Title')}" /></strong></h3>
+        <!-- Excerpt -->
+        <p><h:outputText value="${rec.get('Description')}" /></p>
+        <!-- Post data -->
+        <p>by <a><strong><h:outputText value="${rec.get('ParticipantName')}" /></strong></a>, 14/08/2018</p>
+        <!-- Read more button -->
+        <a class="btn btn-pink btn-md mb-lg-0 mb-4 waves-effect waves-light">comments : <h:outputText value="${rec.get('commentss')}" /></a>
+<a class="btn btn-pink btn-md mb-lg-0 mb-4 waves-effect waves-light">likes <h:outputText value="${rec.get('Like')}" /></a>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-lg-5">
+
+        <!-- Featured image -->
+        <div class="view overlay rounded z-depth-2">
+          <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/img%20(34).jpg" alt="Sample image">
+         </img> <a>
+            <div class="mask rgba-white-slight waves-effect waves-light"></div>
+          </a>
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+</div>
+<br></br>
+</c:forEach>
+
+</ui:define>
+</ui:composition>
