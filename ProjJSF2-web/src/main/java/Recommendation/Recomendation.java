@@ -19,16 +19,15 @@ import javax.ws.rs.core.Response;
 import org.primefaces.json.JSONArray;
 import org.primefaces.json.JSONObject;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 import recommendationService.RecommendationSerRemote;
 
 @ManagedBean
 @RequestScoped
-@JsonIgnoreProperties(ignoreUnknown=true)
+
 public class Recomendation {
-	@JsonProperty("EmailParticipent")
+	
 	private String EmailParticipent ;
 	private String Nom ;
 	private String Prenom;
