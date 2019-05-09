@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:c="http://java.sun.com/jsp/jstl/core"
+template="/Template/Template.xhtml"
+                xmlns:p="http://primefaces.org/ui">
+<ui:param name="page_name" value="Accueil" />
+<ui:define name="content">
+
+
+<h:form>
+
+<table class="table table-hover">
+<tr>
+<td class="table-info">
+<h:commandLink action="#{eventBean.filter('nameEvent')}">
+Name Event
+</h:commandLink>
+</td>
+<td class="table-info">
+<h:commandLink action="#{eventBean.filter('description')}">
+Description
+</h:commandLink>
+</td>
+
+<td class="table-info">
+<h:commandLink action="#{eventBean.filter('location')}">
+Location
+</h:commandLink>
+</td>
+<td class="table-info">
+<h:commandLink action="#{eventBean.filter('startDate')}">
+Starting Date
+</h:commandLink>
+</td >
+<td class="table-info">
+<h:commandLink action="#{eventBean.filter('endDate')}">
+Ending Date
+</h:commandLink>
+</td>
+<td class="table-info">
+<h:commandLink action="#{eventBean.filter('nbPlaces')}">
+	Places disponibles
+</h:commandLink>
+</td>
+
+<td class="table-info">
+
+</td>
+</tr>
+<c:forEach items="#{eventBean.listEvents}" var="rec">
+<tr class="#{rec.getStyle()}">
+<td>
+
+<h:outputText value="${rec.getNomEvent()}" />
+</td>
+
+<td>
+<h:outputText value="${rec.getDescriptionEvent()}" />
+</td>
+ <td>
+
+  
+
+<h:outputText value="${rec.getLocationEvent()}" />
+
+
+  
+
+
+
+</td>
+<td>
+<h:outputText value="${rec.getDateEventDebut()}" />
+</td>
+<td>
+<h:outputText value="${rec.getDateEventFin()}" />
+</td>
+<td>
+<h:outputText value="${rec.getNbPlaceEvent()}" />
+</td>
+<td>
+<a class="btn btn-info" href="https://www.facebook.com/sharer" role="button">Share</a>
+</td>
+</tr>
+
+</c:forEach>
+</table>
+<!-- <div style="margin-left: 20px"><p:selectBooleanCheckbox value="#{eventBean.isInclude}"/>  -->
+<!-- 	<div style="margin-top: -23px; margin-left: 27px"> -->
+<!-- 	Include Completed Events -->
+<!-- 	</div> -->
+<!-- </div> -->
+<!-- <div style="text-align: center"> -->
+<!-- 	<h:commandButton class="btn btn-secondary" value="Search" action="#{eventBean.getAll()}" /> -->
+<!-- 	<h:inputText style="margin-left: 20px" value="#{eventBean.filterString}"/> -->
+<!-- </div> -->
+</h:form>
+
+  
+</ui:define>
+</ui:composition>
