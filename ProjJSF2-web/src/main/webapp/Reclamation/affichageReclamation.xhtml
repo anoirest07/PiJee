@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+
+	<!-- <h:form>
+		<table border="1">
+			<tr>
+
+				<td>Description</td>
+
+				<td>Delete</td>
+			</tr>
+			<c:forEach items="#{reclamation.getAll()}" var="rec">
+				<tr>
+
+
+					<td><h:outputText value="${rec.get('Descriptions')}" /> <h:outputText
+							value="${rec.get('IdEvent')}" /> <h:outputText
+							value="${rec.get('Events')}" /> <h:outputText
+							value="${rec.get('Idpar')}" /> <h:outputText
+							value="${rec.get('Participant')}" /></td>
+					<td><h:outputText value="Treat" /></td>
+				</tr>
+
+			</c:forEach>
+		</table>
+
+
+
+	</h:form> -->
+	
+	<h:form>
+			<h:dataTable value="${reclamation.getAll()}" var="form" border="1">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Form's Date" />
+					</f:facet>
+					<h:outputText value="${form.get('ID')}" />
+				</h:column>
+				<h:column>
+
+					<f:facet name="header">
+						<h:outputText value="Title " />
+					</f:facet>
+					<h:outputText value="${form.get('Descriptions')}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="FormId" />
+					</f:facet>
+					<h:outputText value="${form.get('IdEvent')}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="DescTache" />
+					</f:facet>
+					<h:outputText value="${form.get('Idpar')}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Profession" />
+					</f:facet>
+					<h:outputText value="${form.get('EtatdeTache')}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Mail" />
+					</f:facet>
+					<h:outputText value="${form.get('OragnisateurFk')}" />
+				</h:column>
+
+
+
+
+
+
+
+
+
+
+			</h:dataTable>
+		</h:form>
+
+	
+
+</ui:composition>
