@@ -112,7 +112,7 @@ public class Tache implements Serializable {
 	
 	@PostConstruct
     public void init() {
-		lsttaches = sug.getById(1);
+		lsttaches = sug.getById(6);
 		undonetasks=sug.gettoutelestaches().stream().filter(e->e.getEtatdeTache().name().equals(EtatdeTache.undone.name())).collect(Collectors.toList());
 		donetasks=sug.gettoutelestaches().stream().filter(e->e.getEtatdeTache().name().equals(EtatdeTache.done.name())).collect(Collectors.toList());
 		inprogresstasks=sug.gettoutelestaches().stream().filter(e->e.getEtatdeTache().name().equals(EtatdeTache.inprogress.name())).collect(Collectors.toList());
@@ -154,7 +154,7 @@ public class Tache implements Serializable {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public ArrayList<Object> getmestache(){
-		String lr= sug.getmestache(1);
+		String lr= sug.getmestache(6);
 		JSONArray array= new JSONArray(lr);
 		ArrayList<Object> listdata=new ArrayList<Object>();
 		
